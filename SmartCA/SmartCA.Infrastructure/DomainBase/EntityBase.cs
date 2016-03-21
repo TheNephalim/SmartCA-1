@@ -50,4 +50,5 @@ namespace SmartCA.Infrastructure.DomainBase
             return this.key.GetHashCode();
         }
     }
+
 }
