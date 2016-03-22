@@ -1,0 +1,14 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.csprojResolveAssemblyReference.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\MainWindow.baml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\MainWindow.g.cs
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\App.g.cs
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation_MarkupCompile.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.g.resources
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.Properties.Resources.resources
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.csproj.GenerateResource.Cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Presentation.exe
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Presentation.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Application.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Application.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.exe
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.pdb
