@@ -12,3 +12,4 @@ D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Application.
 D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Application.pdb
 D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.exe
 D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Presentation.exe.config
