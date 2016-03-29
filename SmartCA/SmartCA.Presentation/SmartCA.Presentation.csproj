@@ -53,6 +53,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\SelectProjectViewModel.cs" />
+    <Compile Include="Views\IView.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,11 +95,20 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\SmartCA.Model.csproj">
+      <Project>{3a2d752a-af80-4516-9393-3cbc088873a9}</Project>
+      <Name>SmartCA.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartCA.Application\SmartCA.Application.csproj">
       <Project>{c633542d-ca05-4703-92c3-9a540c580b72}</Project>
       <Name>SmartCA.Application</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SmartCA.Infrastructure\SmartCA.Infrastructure.csproj">
+      <Project>{a1ee0842-d667-4079-898c-3c659bd69d35}</Project>
+      <Name>SmartCA.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

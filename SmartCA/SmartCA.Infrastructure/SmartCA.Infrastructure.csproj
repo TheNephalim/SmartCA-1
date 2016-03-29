@@ -56,6 +56,7 @@
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingConstants.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingElement.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntitySettings.cs" />
+    <Compile Include="EntityFactoryFramework\EntityFactoryBuilder.cs" />
     <Compile Include="EntityFactoryFramework\IEntityFactory.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="DomainBase\EntityBase.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="RepositoryFramework\IUnitOfWorkRepository.cs" />
     <Compile Include="RepositoryFramework\RepositoryBase.cs" />
     <Compile Include="RepositoryFramework\RepositoryFactory.cs" />
+    <Compile Include="UI\DelegateCommand.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +78,7 @@
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
