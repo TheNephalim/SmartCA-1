@@ -7,3 +7,7 @@ D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Debug\SmartCA.Infrastructur
 D:\MyProject\SmartCA\SmartCA\SmartCA.Application\obj\Debug\SmartCA.Application.csprojResolveAssemblyReference.cache
 D:\MyProject\SmartCA\SmartCA\SmartCA.Application\obj\Debug\SmartCA.Application.dll
 D:\MyProject\SmartCA\SmartCA\SmartCA.Application\obj\Debug\SmartCA.Application.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml

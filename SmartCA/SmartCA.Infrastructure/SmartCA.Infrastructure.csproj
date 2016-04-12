@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataHelper.cs" />
+    <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingCollection.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingConstants.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingElement.cs" />
@@ -61,7 +61,6 @@
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="DomainBase\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\SqlCeRepositoryBase.cs" />
     <Compile Include="RepositoryFramework\Configuration\RepositoryMappingCollection.cs" />
     <Compile Include="RepositoryFramework\Configuration\RepositoryMappingConstants.cs" />
     <Compile Include="RepositoryFramework\Configuration\RepositoryMappingElement.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="RepositoryFramework\IUnitOfWorkRepository.cs" />
     <Compile Include="RepositoryFramework\RepositoryBase.cs" />
     <Compile Include="RepositoryFramework\RepositoryFactory.cs" />
-    <Compile Include="UI\DelegateCommand.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>

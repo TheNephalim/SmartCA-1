@@ -21,6 +21,7 @@ namespace SmartCA.Infrastructure.RepositoryFramework
         }
 
         public abstract T FindBy(object key);
+        public abstract IList<T> FindAll();
 
         public void Add(T item)
         {

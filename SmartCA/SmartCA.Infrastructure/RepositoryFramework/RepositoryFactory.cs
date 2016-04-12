@@ -12,7 +12,7 @@ namespace SmartCA.Infrastructure.RepositoryFramework
     {
         private static Dictionary<string, object> repositories = new Dictionary<string, object>();
 
-        public static TRepository GetRepository<TRepository, TEntity>() 
+        public static TRepository GetRepository<TRepository, TEntity>(IUnitOfWork unitOfWork) 
             where TRepository : class, IRepository<TEntity>
             where TEntity : EntityBase
         {
@@ -21,18 +21,51 @@ namespace SmartCA.Infrastructure.RepositoryFramework
 
             if (!RepositoryFactory.repositories.ContainsKey(interfaceShortName))
             {
-                //not there
-                RepositorySettings settings =
-                    (RepositorySettings) ConfigurationManager.GetSection(RepositoryMappingConstants.RepositoryMappingsConfigurationSectionName);
+                //not where
+                RepositorySettings settings = (RepositorySettings) ConfigurationManager.GetSection(RepositoryMappingConstants.RepositoryMappingsConfigurationSectionName);
 
-                repository =
-                    Activator.CreateInstance(Type.GetType(settings.RepositoryMappings[interfaceShortName].RepositoryFullTypeName)) as TRepository;
+                Type repositoryType = null;
 
+                if (settings.RepositoryMappings.ConstaintsKey(interfaceShortName))
+                {
+                    repositoryType = Type.GetType(settings.RepositoryMappings[interfaceShortName].RepositoryFullTypeName);
+                }
+                else
+                {
+                    string entityTypeName = typeof (TEntity).Name;
+                    foreach (RepositoryMappingElement element in settings.RepositoryMappings)
+                    {
+                        if (element.InterfaceShortTypeName.Contains(entityTypeName))
+                        {
+                            repositoryType =
+                                Type.GetType(
+                                    settings.RepositoryMappings[element.InterfaceShortTypeName].RepositoryFullTypeName);
+                            break;
+                        }
+                    }
+                }
+
+                if (repositoryType == null)
+                {
+                    throw new ArgumentNullException("Repository not found in app.config");
+                }
+
+                object[] constructionArgs = null;
+                if (unitOfWork != null && repositoryType.IsSubclassOf(typeof(RepositoryBase<TEntity>)))
+                {
+                    constructionArgs = new object[] {unitOfWork};
+                }
+
+                repository = Activator.CreateInstance(repositoryType, constructionArgs) as TRepository;
                 repositories.Add(interfaceShortName, repository);
             }
             else
             {
                 repository = (TRepository)RepositoryFactory.repositories[interfaceShortName];
+                if (unitOfWork != null && repository.GetType().IsSubclassOf(typeof (RepositoryBase<TEntity>)))
+                {
+                    repository.SetUnitOfWork(unitOfWork);
+                }
             }
             return repository;
         }

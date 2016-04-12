@@ -13,3 +13,13 @@ D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Application.
 D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.exe
 D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\SmartCA.Presentation.pdb
 D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Presentation.exe.config
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\Views\SelectProjectView.baml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\obj\Debug\Views\SelectProjectView.g.cs
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\Model.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Infrastructure.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\Model.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\SmartCA.Infrastructure.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml

@@ -24,6 +24,8 @@ namespace SmartCA.Infrastructure.Repositories
         private Database database;
         private IEntityFactory<T> entityFactory;
         private Dictionary<string, AppendChildData> childCallbacks;
+        private string baseQuery;
+        private string baseWhereClause;
 
         protected SqlCeRepositoryBase():this(null)
         {
@@ -32,16 +34,44 @@ namespace SmartCA.Infrastructure.Repositories
         protected SqlCeRepositoryBase(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             this.database = DatabaseFactory.CreateDatabase();
-            this.entityFactory = EntityFactoryBuilder;
+/*???*/        this.entityFactory = EntityFactoryBuilder.BuildFactory<T>();
             this.childCallbacks = new Dictionary<string, AppendChildData>();
             this.BuildChildCallbacks();
+            this.baseQuery = this.GetBaseQuery();
+            this.baseWhereClause = this.GetBaseWhereClause();
         }
 
         protected abstract void BuildChildCallbacks();
-        public abstract override T FindBy(object key);
+
+        /*???*/
+        protected virtual StringBuilder GetBaseQueryBuilder()
+        {
+            StringBuilder builder = new StringBuilder(50);
+            builder.Append(baseQuery);
+            return builder;
+        }
+
+
+        public override T FindBy(object key)
+        {
+            StringBuilder builder = this.GetBaseQueryBuilder();
+            builder.Append(this.BuildBaseWhereClause(key));
+            return this.BuildEntityFromSql(builder.ToString());
+        }
+
+        public override IList<T> FindAll()
+        {
+            StringBuilder builder = this.GetBaseQueryBuilder();
+            builder.Append(";");
+            return this.BuildEntitiesFromSql(builder.ToString());
+        }
+
         protected abstract override void PersistNewItem(T item);
         protected abstract override void PersistUpdateItem(T item);
         protected abstract override void PersistDeletedItem(T item);
+
+        protected abstract string GetBaseQuery();
+        protected abstract string GetBaseWhereClause();
 
         protected Database Database
         {
@@ -80,7 +110,8 @@ namespace SmartCA.Infrastructure.Repositories
                 DataTable columnData = reader.GetSchemaTable();
                 foreach (string childKeyName in childCallbacks.Keys)
                 {
-                    if (DataHelper.Reader)
+                    /*???*/
+                    if (DataHelper.ReaderContainsColumnName(columnData, childKeyName))
                     {
                         childKeyValue = reader[childKeyName];
                     }
@@ -105,6 +136,11 @@ namespace SmartCA.Infrastructure.Repositories
                 }
             }
             return entities;
+        }
+
+        protected virtual string BuildBaseWhereClause(object key)
+        {
+            return string.Format(this.baseWhereClause, key);
         }
     }
 }

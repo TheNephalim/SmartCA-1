@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartCA.Presentation.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,8 @@ namespace SmartCA.Presentation
         public MainWindow()
         {
             InitializeComponent();
+            SelectProjectView v = new SelectProjectView();
+            v.Show();
         }
     }
 }

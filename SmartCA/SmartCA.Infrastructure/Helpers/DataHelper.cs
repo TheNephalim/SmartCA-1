@@ -22,5 +22,10 @@ namespace SmartCA.Infrastructure
             }
             return containsColumnName;
         }
+
+        public static string GetSqlValue(object value)
+        {
+            return value.ToString();
+        }
     }
 }
