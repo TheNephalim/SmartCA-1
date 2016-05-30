@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Input;
+using SmartCA.Presentation.UI;
 
 namespace SmartCA.Infrastructure.UI
 {
     public class DelegateCommand : ICommand
     {
-        public delegate void SimpleEventHandler(object sender, EventArgs e);
+        public delegate void SimpleEventHandler(object sender, DelegateCommandEventArgs e);
 
         private SimpleEventHandler handler;
         private bool isEnabled = true;
@@ -25,7 +26,7 @@ namespace SmartCA.Infrastructure.UI
 
         public void Execute(object parameter)
         {
-            this.handler(this, EventArgs.Empty);
+            this.handler(this, new DelegateCommandEventArgs(parameter));
         }
 
         public event EventHandler CanExecuteChanged;

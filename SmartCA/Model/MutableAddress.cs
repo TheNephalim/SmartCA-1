@@ -13,6 +13,18 @@ namespace SmartCA.Model
         private string state;
         private string postalCode;
 
+        public MutableAddress()
+        {
+        }
+
+        public MutableAddress(Address address)
+        {
+            street = address.Street;
+            city = address.City;
+            state = address.State;
+            postalCode = address.PostalCode;
+        }
+
         public string Street
         {
             get { return street; }
@@ -40,6 +52,11 @@ namespace SmartCA.Model
         public Address ToAddress()
         {
             return new Address(Street, City, State, PostalCode);
+        }
+
+        public override string ToString()
+        {
+            return this.ToAddress().ToString();
         }
     }
 }

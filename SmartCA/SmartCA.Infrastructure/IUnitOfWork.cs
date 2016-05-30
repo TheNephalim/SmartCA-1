@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using SmartCA.Infrastructure.DomainBase;
 using SmartCA.Infrastructure.RepositoryFramework;
+using SmartCA.Infrastructure.Transactions;
 
 namespace SmartCA.Infrastructure
 {
@@ -13,5 +14,7 @@ namespace SmartCA.Infrastructure
         void RegisterChanged(EntityBase entity, IUnitOfWorkRepository repository);
         void RegisterRemoved(EntityBase entity, IUnitOfWorkRepository repository);
         void Commit();
+        object Key { get; }
+        IClientTransactionRepository ClientTransactionRepository { get; }
     }
 }

@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainBase\IEntity.cs" />
     <Compile Include="Helpers\DataHelper.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingCollection.cs" />
     <Compile Include="EntityFactoryFramework\Configuration\EntityMappingConstants.cs" />
@@ -58,9 +59,12 @@
     <Compile Include="EntityFactoryFramework\Configuration\EntitySettings.cs" />
     <Compile Include="EntityFactoryFramework\EntityFactoryBuilder.cs" />
     <Compile Include="EntityFactoryFramework\IEntityFactory.cs" />
+    <Compile Include="Helpers\Serializer.cs" />
     <Compile Include="IUnitOfWork.cs" />
     <Compile Include="DomainBase\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryFramework\ClientTransactionRepository.cs" />
+    <Compile Include="RepositoryFramework\ClientTransactionRepositoryFactory.cs" />
     <Compile Include="RepositoryFramework\Configuration\RepositoryMappingCollection.cs" />
     <Compile Include="RepositoryFramework\Configuration\RepositoryMappingConstants.cs" />
     <Compile Include="RepositoryFramework\Configuration\RepositoryMappingElement.cs" />
@@ -69,14 +73,22 @@
     <Compile Include="RepositoryFramework\IUnitOfWorkRepository.cs" />
     <Compile Include="RepositoryFramework\RepositoryBase.cs" />
     <Compile Include="RepositoryFramework\RepositoryFactory.cs" />
+    <Compile Include="Transactions\ClientTransaction.cs" />
+    <Compile Include="Transactions\IClientTransactionRepository.cs" />
+    <Compile Include="Transactions\ServerTransaction.cs" />
+    <Compile Include="Transactions\Transaction.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\DataContracts\SmartCA.DataContracts.csproj">
+      <Project>{30757ef3-fd67-4835-b4ec-612da68a7e60}</Project>
+      <Name>SmartCA.DataContracts</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

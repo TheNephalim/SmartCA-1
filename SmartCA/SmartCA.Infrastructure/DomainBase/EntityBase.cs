@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SmartCA.Infrastructure.DomainBase
 {
-    public abstract class EntityBase
+    public abstract class EntityBase : IEntity
     {
         protected EntityBase():this(null)
         {

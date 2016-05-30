@@ -1,0 +1,17 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\SmartCA.Infrastructure.Repositories.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\SmartCA.Infrastructure.Repositories.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\SmartCA.Infrastructure.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\SmartCA.Model.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\SmartCA.Model.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\SmartCA.Infrastructure.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\obj\Release\SmartCA.Infrastructure.Repositories.csprojResolveAssemblyReference.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\obj\Release\SmartCA.Infrastructure.Repositories.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\obj\Release\SmartCA.Infrastructure.Repositories.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\System.Data.SqlServerCe.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Release\RU\System.Data.SqlServerCe.resources.dll

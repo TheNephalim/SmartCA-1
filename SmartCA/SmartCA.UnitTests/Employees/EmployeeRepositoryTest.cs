@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SmartCA.Infrastructure;
+using SmartCA.Infrastructure.Repositories;
 using SmartCA.Infrastructure.RepositoryFramework;
 using SmartCA.Model.Employees;
 using SmartCA.Model.Projects;
@@ -19,7 +20,7 @@ namespace SmartCA.UnitTests.Employees
         public void MyTestInitialize()
         {
             this.unitOfWork = new UnitOfWork();
-            this.repository = RepositoryFactory.GetRepository<IEmployeeRepository, Project>(this.unitOfWork);
+            this.repository = RepositoryFactory.GetRepository<IEmployeeRepository, Employee>(this.unitOfWork);
         }
 
         [TestMethod]

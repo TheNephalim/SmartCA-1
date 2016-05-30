@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
+using SmartCA.Infrastructure.DomainBase;
 using SmartCA.Infrastructure.EntityFactoryFramework;
-using SmartCA.Infrastructure.Repositories;
 using SmartCA.Infrastructure.RepositoryFramework;
 using SmartCA.Model.Companies;
 using SmartCA.Model.Employees;
 using SmartCA.Model.Projects;
-using SmartCA.Infrastructure;
 
-namespace SmartCA.Model.Repositories
+namespace SmartCA.Infrastructure.Repositories
 {
     public class ProjectRepository : SqlCeRepositoryBase<Project>, IProjectRepository
     {
@@ -41,12 +41,12 @@ namespace SmartCA.Model.Repositories
             }
             else
             {
-                builder.Append(" WHERE p.ActualCompletionDate IS NOT NULL AND p.PercentComplete < 100");
+                builder.Append(" WHERE p.ActualCompletionDate IS NULL AND p.PercentComplete < 100");
             }
             if (segments != null || segments.Count > 0)
             {
                 builder.Append(string.Format(" AND p.MarketSegmentID IN ({0})",
-                                             DataHelper.EntityListToDelimited(segments).ToString()));
+                                             DataHelper.EntityListToDelimited(segments)));
             }
             builder.Append(";");
             return this.BuildEntitiesFromSql(builder.ToString());
@@ -75,6 +75,20 @@ namespace SmartCA.Model.Repositories
                     segments.Add(factory.BuildEntity(reader));
                 }
             }
+            return segments;
+        }
+
+        public void SaveContact(ProjectContact contact)
+        {
+            List<ProjectContact> contacts = new List<ProjectContact>(this.FindBy(contact.Project.Key).Contacts);
+            if (contacts.Where(c => c.Key.Equals(contact.Key)).Count() > 0)
+            {
+                this.UnitOfWork.RegisterChanged(contact, this);
+            }
+            else
+            {
+                this.UnitOfWork.RegisterAdded(contact, this);
+            }
         }
 
         #endregion
@@ -82,7 +96,7 @@ namespace SmartCA.Model.Repositories
         #region BuildChildCallbacks
         protected override void BuildChildCallbacks()
         {
-            this.ChildCallbacks.Add(ProjectFactory.FieldNames.OwnerCompanyId, this, AppendOwner);
+            this.ChildCallbacks.Add(ProjectFactory.FieldNames.OwnerCompanyId, this.AppendOwner);
             this.ChildCallbacks.Add(ProjectFactory.FieldNames.ConstructionAdministratorEmployeeId, this.AppendConstructionAdministrator);
             this.ChildCallbacks.Add(ProjectFactory.FieldNames.PrincipalEmployeeId, this.AppendPrincipal);
             this.ChildCallbacks.Add("allowances", delegate(Project project, object childKeyName)
@@ -96,7 +110,7 @@ namespace SmartCA.Model.Repositories
 
         public void AppendOwner(Project project, object ownerCompanyId)
         {
-            ICompanyRepository repository = RepositoryFactory.GetRepository<ICompanyRepository, Company>();
+            ICompanyRepository repository = RepositoryFactory.GetRepository<ICompanyRepository, Company>(this.UnitOfWork);
             project.Owner = repository.FindBy(ownerCompanyId);
         }
 
@@ -125,13 +139,30 @@ namespace SmartCA.Model.Repositories
 
         private Employee GetEmployee(object employeeId)
         {
-            IEmployeeRepository repository = RepositoryFactory.GetRepository<IEmployeeRepository, Employee>();
-            return repository.FindBy(employeeId);
+            //IEmployeeRepository repository = RepositoryFactory.GetRepository<IEmployeeRepository, Employee>();
+            //return repository.FindBy(employeeId);
+            return null;
         }
 
         #endregion
 
         #region UnitOfWork implementation
+
+
+        public override void PersistNewItem(IEntity item)
+        {
+            Project project = item as Project;
+            if (project != null)
+            {
+                PersistNewItem(project);
+            }
+            else
+            {
+                ProjectContact contact = item as ProjectContact;
+                this.PersistNewItem(contact);
+            }
+        }
+
         protected override void PersistNewItem(Project item)
         {
             StringBuilder builder = GetBaseQueryBuilder();
@@ -194,6 +225,33 @@ INSERT INTO Project
             this.Database.ExecuteNonQuery(this.Database.GetSqlStringCommand(builder.ToString()));
         }
 
+        protected void PersistNewItem(ProjectContact contact)
+        {
+            StringBuilder builder = new StringBuilder(100);
+            builder.Append(string.Format("INSERT INTO ProjectContact ({0}, {1}, {2}) ",
+                                         ProjectFactory.FieldNames.ProjectId, 
+                                         ContactFactory.FieldNames.ContactId,
+                                         contact.OnFinalDistributionList));
+            builder.Append(string.Format("VALUES ({0}, {1}, {2});",
+                                         DataHelper.GetSqlValue(contact.Project.Key),
+                                         DataHelper.GetSqlValue(contact.Contact.Key),
+                                         DataHelper.GetSqlValue(contact.OnFinalDistributionList)));
+            this.Database.ExecuteNonQuery(this.Database.GetSqlStringCommand(builder.ToString()));
+        }
+
+        public override void PersistUpdateItem(IEntity item)
+        {
+            Project project = item as Project;
+            if (project != null)
+            {
+                PersistUpdateItem(project);
+            }
+            else
+            {
+                PersistUpdateItem(item as ProjectContact);
+            }
+        }
+
         protected override void PersistUpdateItem(Project item)
         {
             StringBuilder builder = GetBaseQueryBuilder();
@@ -229,11 +287,41 @@ INSERT INTO Project
             this.Database.ExecuteNonQuery(this.Database.GetSqlStringCommand(builder.ToString()));
         }
 
+        protected void PersistUpdateItem(ProjectContact item)
+        {
+            StringBuilder builder = GetBaseQueryBuilder();
+            builder.Append("UPDATE ProjectContact SET ");
+            builder.Append(string.Format("{0} = {1}", ProjectFactory.FieldNames.ProjectId, DataHelper.GetSqlValue(item.Project)));
+            builder.Append(string.Format("{0} = {1}", ContactFactory.FieldNames.ContactId, DataHelper.GetSqlValue(item.Contact)));
+            builder.Append(string.Format("{0} = {1}", ProjectFactory.FieldNames.OnFinalDistributionList, DataHelper.GetSqlValue(item.OnFinalDistributionList)));
+            builder.Append(" ");
+            builder.Append(this.BuildBaseWhereClause(item.Key));
+        }
+
+        public override void PersistDeletedItem(IEntity item)
+        {
+            Project project = item as Project;
+            if (project != null)
+            {
+                PersistDeletedItem(project);
+            }
+            else
+            {
+                PersistDeletedItem(item as ProjectContact);
+            }
+        }
+
         protected override void PersistDeletedItem(Project item)
         {
             string query = string.Format("DELETE FROM ProjectAllowance {0}", this.BuildBaseWhereClause(item.Key));
             this.Database.ExecuteNonQuery(this.Database.GetSqlStringCommand(query));
             query = string.Format("DELETE FROM Project {0}", this.BuildBaseWhereClause(item.Key));
+            this.Database.ExecuteNonQuery(this.Database.GetSqlStringCommand(query));
+        }
+
+        protected void PersistDeletedItem(ProjectContact item)
+        {
+            string query = string.Format("DELETE FROM ProjectContact {0}", this.BuildBaseWhereClause(item.Project.Key));
             this.Database.ExecuteNonQuery(this.Database.GetSqlStringCommand(query));
         }
 
@@ -256,6 +344,8 @@ from Project p
             return " where ProjectID = '{0}';";
         }
         #endregion
+
+
 
     }
 }

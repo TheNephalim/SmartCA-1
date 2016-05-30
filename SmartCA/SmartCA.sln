@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCA.Presentation.Window
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCA.Infrastructure.UI", "SmartCA.Infrastructure.UI\SmartCA.Infrastructure.UI.csproj", "{3BE084DE-2A2A-4674-B301-8CF6363D3551}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCA.DataContracts", "DataContracts\SmartCA.DataContracts.csproj", "{30757EF3-FD67-4835-B4EC-612DA68A7E60}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartCA.DataContracts.Helpers", "SmartCA.DataContracts.Helpers\SmartCA.DataContracts.Helpers.csproj", "{EE0AF0FB-ABEB-4939-AEDC-A3D09402B169}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,11 +59,19 @@ Global
 		{3BE084DE-2A2A-4674-B301-8CF6363D3551}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BE084DE-2A2A-4674-B301-8CF6363D3551}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BE084DE-2A2A-4674-B301-8CF6363D3551}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30757EF3-FD67-4835-B4EC-612DA68A7E60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30757EF3-FD67-4835-B4EC-612DA68A7E60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30757EF3-FD67-4835-B4EC-612DA68A7E60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30757EF3-FD67-4835-B4EC-612DA68A7E60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE0AF0FB-ABEB-4939-AEDC-A3D09402B169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE0AF0FB-ABEB-4939-AEDC-A3D09402B169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE0AF0FB-ABEB-4939-AEDC-A3D09402B169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE0AF0FB-ABEB-4939-AEDC-A3D09402B169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.SqlCe.6.0.1304.0\lib\NET45
 	EndGlobalSection
 EndGlobal

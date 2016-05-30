@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SmartCA.Infrastructure;
 using SmartCA.Infrastructure.RepositoryFramework;
+using SmartCA.Model.Companies;
+using SmartCA.Model.Contacts;
 using SmartCA.Model.Projects;
 
 namespace SmartCA.UnitTests.Projects
@@ -11,7 +13,7 @@ namespace SmartCA.UnitTests.Projects
     public class ProjectRepositoryTest
     {
         private TestContext testContextInstance;
-        private UnitOfWork unitOfWork;
+        private IUnitOfWork unitOfWork;
         private IProjectRepository repository;
 
         [TestInitialize]
@@ -45,6 +47,26 @@ namespace SmartCA.UnitTests.Projects
         {
             IList<MarketSegment> segments = this.repository.FindAllMarketSegments();
             Assert.AreEqual(true, segments.Count > 0);
+        }
+
+        [DeploymentItem("SmartCA.sdf"), TestMethod]
+        public void SaveContactTest()
+        {
+            string projectNumber = "12345.00";
+            Project project = repository.FindBy(projectNumber);
+            int oldCount = project.Contacts.Count;
+
+            IUnitOfWork contactUnitOfWork = new UnitOfWork();
+            IContactRepository contactRepository = RepositoryFactory.GetRepository<IContactRepository, Contact>(unitOfWork);
+            object contactKey = "“cae9eb86-5a86-4965-9744-18326fd56a3b";
+            Contact contact = contactRepository.FindBy(contactKey);
+            
+            ProjectContact projectContact = new ProjectContact(project, Guid.NewGuid(), contact);
+            this.repository.SaveContact(projectContact);
+            this.unitOfWork.Commit();
+
+            Project updatedProject = this.repository.FindBy(projectNumber);
+            Assert.AreEqual(oldCount, updatedProject.Contacts.Count -1);
         }
     }
 }

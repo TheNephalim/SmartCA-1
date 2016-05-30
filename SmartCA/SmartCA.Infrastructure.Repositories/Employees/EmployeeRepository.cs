@@ -1,8 +1,8 @@
-﻿using SmartCA.Model.Employees;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SmartCA.Model.Employees;
 
 namespace SmartCA.Infrastructure.Repositories
 {
@@ -24,7 +24,6 @@ namespace SmartCA.Infrastructure.Repositories
 
         protected override void BuildChildCallbacks()
         {
-            throw new NotImplementedException();
         }
 
         #region UnitOfWork

@@ -20,8 +20,8 @@ namespace SmartCA.Infrastructure.Repositories
             public const string ProjectCity = "City";
             public const string ProjectState = "State";
             public const string ProjectPostalCode = "PostalCode";
-            public const string ConstructionAdministratorEmployeeId = "ConstructionAdministratorEmployeeid";
-            public const string PrincipalEmployeeId = "PrincipalEmployeeId";
+            public const string ConstructionAdministratorEmployeeId = "ConstructionAdministratorEmployeeID";
+            public const string PrincipalEmployeeId = "PrincipalEmployeeID";
             public const string ContractDate = "ContractDate";
             public const string EstimatedStartDate = "EstimatedStartDate";
             public const string EstimatedCompletionDate = "EstimatedCompletionDate";
@@ -37,19 +37,24 @@ namespace SmartCA.Infrastructure.Repositories
             public const string ContractReason = "ContractReason";
             public const string AgencyApplicationNumber = "AgencyApplicationNumber";
             public const string AgencyFileNumber = "AgencyFileNumber";
-            public const string MarketSegmentId = "MarketSegmentId";
-            public const string OwnerCompanyId = "OwnerCompanyId";
-            
+            public const string MarketSegmentId = "MarketSegmentID";
+            public const string OwnerCompanyId = "OwnerCompanyID";
             public const string AllowanceTitle = "AllowanceTitle";
-            public const string AllowanceAmount = "AllowanceAmount";
+            public const string AllowanceAmount = "Amount";
+            public const string ProjectContactId = "ProjectContactID";
+            public const string ContactId = "ContactID";
+            public const string OnFinalDistributionList = "OnFinalDistributionList";
         }
 
         public Project BuildEntity(IDataReader reader)
         {
-            return new Project(
+            Project project = new Project(
                 reader[FieldNames.ProjectId]
                 , reader[FieldNames.ProjectNumber].ToString()
                 , reader[FieldNames.ProjectName].ToString());
+            project.Address = AddressFactory.BuildAddress(reader);
+
+            return project;
         }
 
         public static Allowance BuildAllowance(IDataReader reader)

@@ -8,8 +8,8 @@ namespace SmartCA.Infrastructure.RepositoryFramework
 {
     public interface IUnitOfWorkRepository
     {
-        void PersistNewItem(EntityBase item);
-        void PersistUpdateItem(EntityBase item);
-        void PersistDeletedItem(EntityBase item);
+        void PersistNewItem(IEntity item);
+        void PersistUpdateItem(IEntity item);
+        void PersistDeletedItem(IEntity item);
     }
 }

@@ -1,11 +1,7 @@
-D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\Model.dll
-D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\Model.pdb
 D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\SmartCA.Infrastructure.dll
 D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\SmartCA.Infrastructure.pdb
 D:\MyProject\SmartCA\SmartCA\Model\obj\Debug\SmartCA.Model.csprojResolveAssemblyReference.cache
-D:\MyProject\SmartCA\SmartCA\Model\obj\Debug\Model.dll
-D:\MyProject\SmartCA\SmartCA\Model\obj\Debug\Model.pdb
-D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
-D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
-D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\SmartCA.Model.dll
+D:\MyProject\SmartCA\SmartCA\Model\bin\Debug\SmartCA.Model.pdb
+D:\MyProject\SmartCA\SmartCA\Model\obj\Debug\SmartCA.Model.dll
+D:\MyProject\SmartCA\SmartCA\Model\obj\Debug\SmartCA.Model.pdb

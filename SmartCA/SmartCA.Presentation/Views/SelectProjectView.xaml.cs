@@ -1,4 +1,5 @@
-﻿using SmartCA.Presentation.ViewModels;
+﻿using SmartCA.Infrastructure.UI;
+using SmartCA.Presentation.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,16 +25,6 @@ namespace SmartCA.Presentation.Views
         {
             InitializeComponent();
             this.DataContext = new SelectProjectViewModel(this);
-        }
-
-        void IView.Show()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IView.Close()
-        {
-            throw new NotImplementedException();
         }
     }
 }

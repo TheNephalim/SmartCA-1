@@ -1,4 +1,5 @@
-﻿using SmartCA.Infrastructure.DomainBase;
+﻿using System.Reflection;
+using SmartCA.Infrastructure.DomainBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;

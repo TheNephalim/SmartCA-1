@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 using SmartCA.Infrastructure.EntityFactoryFramework;
 using SmartCA.Model.Projects;
 
-namespace SmartCA.Model.Repositories
+namespace SmartCA.Infrastructure.Repositories
 {
     internal class MarketSegmentFactory : IEntityFactory<MarketSegment>
     {

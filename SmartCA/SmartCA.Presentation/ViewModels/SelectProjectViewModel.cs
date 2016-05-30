@@ -47,7 +47,7 @@ namespace SmartCA.Presentation.ViewModels
         private void SelectCommandHandler(object sender, EventArgs e)
         {
             Project project = this.Projects.CurrentItem as Project;
-            //UserSession.CurrentProject = project;
+            UserSession.CurrentProject = project;
             this.view.Close();
         }
 

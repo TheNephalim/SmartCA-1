@@ -15,10 +15,10 @@ namespace SmartCA.Model
 
         public Address(string street, string city, string state, string postalCode)
         {
-            street = street;
-            city = city;
-            state = state;
-            postalCode = postalCode;
+            this.street = street;
+            this.city = city;
+            this.state = state;
+            this.postalCode = postalCode;
             Validate();
         }
 
@@ -51,6 +51,19 @@ namespace SmartCA.Model
             {
                 throw  new InvalidOperationException("Invalid address.");
             }
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new StringBuilder(300);
+            builder.Append(street);
+            builder.Append("\r\n");
+            builder.Append(city);
+            builder.Append(", ");
+            builder.Append(state);
+            builder.Append(" ");
+            builder.Append(postalCode);
+            return builder.ToString();
         }
     }
 }

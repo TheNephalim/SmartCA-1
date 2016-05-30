@@ -1,0 +1,7 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\bin\Debug\SmartCA.Infrastructure.UI.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\bin\Debug\SmartCA.Infrastructure.UI.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\obj\Debug\SmartCA.Infrastructure.UI.csprojResolveAssemblyReference.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\obj\Debug\SmartCA.Infrastructure.UI.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\obj\Debug\SmartCA.Infrastructure.UI.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\bin\Debug\SmartCA.Infrastructure.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.UI\bin\Debug\SmartCA.Infrastructure.pdb

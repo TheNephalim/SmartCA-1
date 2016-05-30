@@ -1,7 +1,4 @@
-﻿using SmartCA.Infrastructure.DomainBase;
-using SmartCA.Infrastructure.EntityFactoryFramework;
-using SmartCA.Infrastructure.RepositoryFramework;
-using Microsoft.Practices.EnterpriseLibrary.Data;
+﻿using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 using System;
 using System.Collections.Generic;
@@ -9,6 +6,10 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.Common;
+using SmartCA.Infrastructure.DomainBase;
+using SmartCA.Infrastructure.EntityFactoryFramework;
+using SmartCA.Infrastructure.RepositoryFramework;
+using System.Data.SqlServerCe;
 
 namespace SmartCA.Infrastructure.Repositories
 {
@@ -33,8 +34,10 @@ namespace SmartCA.Infrastructure.Repositories
 
         protected SqlCeRepositoryBase(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            this.database = DatabaseFactory.CreateDatabase();
-/*???*/        this.entityFactory = EntityFactoryBuilder.BuildFactory<T>();
+            DatabaseProviderFactory factory = new DatabaseProviderFactory();
+            database = factory.Create("SmartCA");
+            //this.database = DatabaseFactory.CreateDatabase();
+            this.entityFactory = EntityFactoryBuilder.BuildFactory<T>();
             this.childCallbacks = new Dictionary<string, AppendChildData>();
             this.BuildChildCallbacks();
             this.baseQuery = this.GetBaseQuery();
@@ -128,7 +131,7 @@ namespace SmartCA.Infrastructure.Repositories
         protected virtual List<T> BuildEntitiesFromSql(string sql)
         {
             List<T> entities = new List<T>();
-            using (IDataReader reader = this.database.ExecuteReader(sql))
+            using (IDataReader reader = this.ExecuteReader(sql))
             {
                 while (reader.Read())
                 {
@@ -141,6 +144,34 @@ namespace SmartCA.Infrastructure.Repositories
         protected virtual string BuildBaseWhereClause(object key)
         {
             return string.Format(this.baseWhereClause, key);
+        }
+
+        public static void UpgradeDataBase()
+        {
+            string connStringCI = "Data Source= SmartCA.sdf; LCID= 1033";
+
+            // Set "Case Sensitive" to true to change the collation from CI to CS.
+            string connStringCS = "Data Source= SmartCA.sdf; LCID= 1033; Case Sensitive=true";
+
+            SqlCeEngine engine = new SqlCeEngine(connStringCI);
+
+            // The collation of the database will be case sensitive because of 
+            // the new connection string used by the Upgrade method.                
+            engine.Upgrade(connStringCS);
+
+            SqlCeConnection conn = null;
+            conn = new SqlCeConnection(connStringCI);
+            conn.Open();
+
+            //Retrieve the connection string information - notice the 'Case Sensitive' value.
+            List<KeyValuePair<string, string>> dbinfo = conn.GetDatabaseInfo();
+
+            Console.WriteLine("\nGetDatabaseInfo() results:");
+
+            foreach (KeyValuePair<string, string> kvp in dbinfo)
+            {
+                Console.WriteLine(kvp);
+            }
         }
     }
 }

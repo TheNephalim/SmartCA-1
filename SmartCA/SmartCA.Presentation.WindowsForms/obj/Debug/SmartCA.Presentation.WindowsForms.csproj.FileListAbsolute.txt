@@ -1,0 +1,8 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\bin\Debug\SmartCA.Presentation.WindowsForms.exe
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\bin\Debug\SmartCA.Presentation.WindowsForms.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Debug\SmartCA.Presentation.WindowsForms.csprojResolveAssemblyReference.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Debug\SmartCA.Presentation.WindowsForms.Form1.resources
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Debug\SmartCA.Presentation.WindowsForms.Properties.Resources.resources
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Debug\SmartCA.Presentation.WindowsForms.csproj.GenerateResource.Cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Debug\SmartCA.Presentation.WindowsForms.exe
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Debug\SmartCA.Presentation.WindowsForms.pdb

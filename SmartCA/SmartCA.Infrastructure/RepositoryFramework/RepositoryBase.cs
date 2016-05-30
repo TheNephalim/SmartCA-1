@@ -17,6 +17,17 @@ namespace SmartCA.Infrastructure.RepositoryFramework
 
         protected RepositoryBase(IUnitOfWork unitOfWork)
         {
+            SetUnitOfWork(unitOfWork);
+        }
+
+        #region IRepository Implementation
+
+        protected IUnitOfWork UnitOfWork {
+            get { return unitOfWork; }
+        }
+
+        public void SetUnitOfWork(IUnitOfWork unitOfWork)
+        {
             this.unitOfWork = unitOfWork;
         }
 
@@ -58,23 +69,31 @@ namespace SmartCA.Infrastructure.RepositoryFramework
             }
         }
 
-        public void PersistNewItem(EntityBase item)
+        #endregion
+
+        #region IUnitOfWorkRepository Implementation
+
+        public virtual void PersistNewItem(IEntity item)
         {
-            this.PersistNewItem(item);
+            this.PersistNewItem((T)item);
         }
 
-        public void PersistUpdateItem(EntityBase item)
+        public virtual void PersistUpdateItem(IEntity item)
         {
-            this.PersistUpdateItem(item);
+            this.PersistUpdateItem((T)item);
         }
 
-        public void PersistDeletedItem(EntityBase item)
+        public virtual void PersistDeletedItem(IEntity item)
         {
-            this.PersistDeletedItem(item);
+            this.PersistDeletedItem((T)item);
         }
+
+        
 
         protected abstract void PersistNewItem(T item);
         protected abstract void PersistUpdateItem(T item);
         protected abstract void PersistDeletedItem(T item);
+
+        #endregion
     }
 }

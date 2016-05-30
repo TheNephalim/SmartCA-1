@@ -1,4 +1,3 @@
-D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure\bin\Debug\SmartCA.Infrastructure.dll.config
 D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure\bin\Debug\SmartCA.Infrastructure.dll
 D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure\bin\Debug\SmartCA.Infrastructure.pdb
 D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure\obj\Debug\SmartCA.Infrastructure.csprojResolveAssemblyReference.cache

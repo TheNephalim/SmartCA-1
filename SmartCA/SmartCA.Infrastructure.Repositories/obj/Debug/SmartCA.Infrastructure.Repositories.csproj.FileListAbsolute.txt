@@ -1,0 +1,17 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\obj\Debug\SmartCA.Infrastructure.Repositories.csprojResolveAssemblyReference.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\SmartCA.Infrastructure.Repositories.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\SmartCA.Infrastructure.Repositories.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\SmartCA.Infrastructure.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\SmartCA.Infrastructure.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\obj\Debug\SmartCA.Infrastructure.Repositories.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\obj\Debug\SmartCA.Infrastructure.Repositories.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\System.Data.SqlServerCe.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\RU\System.Data.SqlServerCe.resources.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\SmartCA.Model.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\SmartCA.Model.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Infrastructure.Repositories\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.SqlCe.xml

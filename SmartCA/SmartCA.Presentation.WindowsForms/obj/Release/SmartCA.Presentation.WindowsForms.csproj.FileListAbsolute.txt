@@ -1,0 +1,7 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\bin\Release\SmartCA.Presentation.WindowsForms.exe
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\bin\Release\SmartCA.Presentation.WindowsForms.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Release\SmartCA.Presentation.WindowsForms.Form1.resources
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Release\SmartCA.Presentation.WindowsForms.Properties.Resources.resources
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Release\SmartCA.Presentation.WindowsForms.csproj.GenerateResource.Cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Release\SmartCA.Presentation.WindowsForms.exe
+D:\MyProject\SmartCA\SmartCA\SmartCA.Presentation.WindowsForms\obj\Release\SmartCA.Presentation.WindowsForms.pdb

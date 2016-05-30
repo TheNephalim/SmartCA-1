@@ -35,7 +35,9 @@ namespace SmartCA.Model.Projects
         private Employee constructionAdministrator;
         private Employee principalInCharge;
         private List<Allowance> allowances;
-        public List<Contract> Contracts { get; private set; }
+        private List<Contract> contracts;
+        private List<ProjectContact> contacts;
+         
 
         public Project(string number, string name)
             :this(null, name, number)
@@ -70,7 +72,8 @@ namespace SmartCA.Model.Projects
             AgencyFileNumber = string.Empty;
             Segment = null;
             allowances = new List<Allowance>();
-            Contracts = new List<Contract>();
+            contracts = new List<Contract>();
+            contacts = new List<ProjectContact>();
         }
 
         public string Number {
@@ -204,6 +207,22 @@ namespace SmartCA.Model.Projects
         {
             get { return allowances; }
             set { allowances = value; }
+        }
+
+        public List<Contract> Contracts
+        {
+            get
+            {
+                return contracts;
+            }
+        }
+
+        public List<ProjectContact> Contacts
+        {
+            get
+            {
+                return contacts;
+            }
         }
 
     }

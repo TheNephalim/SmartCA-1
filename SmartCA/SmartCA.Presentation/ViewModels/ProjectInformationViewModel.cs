@@ -60,13 +60,13 @@ namespace SmartCA.Presentation.ViewModels
             };
 
             this.CurrentObjectState = (this.currentProject != null ? ObjectState.Existing : ObjectState.New);
-            this.owners = new CollectionView(CompannyService.GetOwners());
+   //         this.owners = new CollectionView(CompanyService.GetOwners());
             this.marketSegments = new CollectionView(ProjectService.GetMarketSegments());
             this.constructionAdministrators = new CollectionView(EmployeeService.GetConstractionAdministrators());
             this.principals = new CollectionView(EmployeeService.GetPrincipals());
 
-            this.saveCommand = new DelegateCommand();
-            this.newCommand = new DelegateCommand();
+            this.saveCommand = new DelegateCommand(SaveCommandHandler);
+            this.newCommand = new DelegateCommand(NewCommandHandler);
         }
 
         public Project CurrentProject {

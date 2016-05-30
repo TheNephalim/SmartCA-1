@@ -1,0 +1,9 @@
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Release\SmartCA.Application.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Release\SmartCA.Application.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Release\SmartCA.Infrastructure.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Release\SmartCA.Model.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Release\SmartCA.Model.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\bin\Release\SmartCA.Infrastructure.pdb
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\obj\Release\SmartCA.Application.csprojResolveAssemblyReference.cache
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\obj\Release\SmartCA.Application.dll
+D:\MyProject\SmartCA\SmartCA\SmartCA.Application\obj\Release\SmartCA.Application.pdb

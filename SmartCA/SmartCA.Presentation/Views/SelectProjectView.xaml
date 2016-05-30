@@ -38,13 +38,13 @@
                 Name="cancelButton"
                 Command="{Binding Path=CancelCommand}" 
                 HorizontalAlignment="Left" 
-                VerticalAlignment="Bottom">
+                VerticalAlignment="Bottom" Width="100">
             Cancel
         </Button>
-        <Button Margin="0,0,28.006666666667,35" 
+        <Button Margin="0,0,28,35" 
                 Name="okButton"
                 Command="{Binding Path=SelectCommand}" 
-                HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="100">
             OK
         </Button>
     </Grid >
